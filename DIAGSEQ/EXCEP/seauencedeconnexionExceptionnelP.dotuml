@@ -1,0 +1,10 @@
+
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Exceptionnel"] {
+  actor parieur
+  lifeline "Système de Paris" as web
+  
+  parieur --> web "demande de connexion"
+  activate web
+  parieur <-r- web "échec de la connexion"
+
+}

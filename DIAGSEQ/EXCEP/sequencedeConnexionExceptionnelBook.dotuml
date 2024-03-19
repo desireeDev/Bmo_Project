@@ -1,0 +1,16 @@
+digraph G {
+    node [shape=box];  
+    rankdir=LR;        
+    
+    // Définir les nœuds pour les acteurs et les systèmes
+    Bookmaker [label="Bookmaker"];
+    Interface [label="Système de Paris"];
+    
+    // Messages entre les nœuds
+    Bookmaker -> Interface [label="1: demandeConnexion()"];
+    Interface -> Bookmaker [label="4: afficherMessageErreur()"];
+    
+    // Ajouter du style aux nœuds et messages
+    edge [fontname="Arial", fontsize=12];
+    node [fontname="Arial", fontsize=12, style=filled, fillcolor=lightgrey];
+}

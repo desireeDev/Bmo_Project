@@ -1,0 +1,16 @@
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Exceptionnel de Modification d'un Événement"] {
+  actor Bookmaker
+  participant "Système de Paris" as system
+  participant " Événement Sportif" as ev
+  
+  Bookmaker --> system "demande de modification d'événement"
+  activate system
+  system --> ev "rechercher événement à modifier"
+  activate ev
+  ev --> system "événement non trouvé"
+  deactivate ev
+  system --> Bookmaker "échec de la modification: événement non trouvé"
+  deactivate system
+  
+ 
+}

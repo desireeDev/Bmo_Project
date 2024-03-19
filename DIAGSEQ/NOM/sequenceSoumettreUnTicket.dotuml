@@ -1,0 +1,21 @@
+
+
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Nominal"] {
+  actor parieur
+  lifeline "Système de Paris" as web
+  lifeline "ParisEV2_1" as validate
+
+ 
+  parieur --> web "soumettre un  ticket"
+
+  activate web
+  parieur <-r- web "ticket bien soumis "
+
+  web --> validate "Ticket crée avec succès"
+
+
+  activate validate
+  web <-r- validate "ok"
+  
+
+}
