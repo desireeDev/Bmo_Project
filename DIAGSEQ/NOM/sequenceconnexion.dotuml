@@ -1,4 +1,4 @@
-SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Exceptionnel"] {
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram "] {
   actor parieur
   lifeline "Système de Paris" as web
   parieur --> web "demande de connexion"

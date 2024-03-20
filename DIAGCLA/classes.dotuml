@@ -1,21 +1,60 @@
-UseCaseDiagram [frame=true framecolor=steelblue label="Sytème de paris"] {
-  attribute usecase [fillcolor=paleturquoise]
-  actor a as "Parieur"
-  actor c as "Bookmaker"
-  system s as "Système de Paris" [fillcolor=whitesmoke] {
-    usecase u1 as "Determine les events proposes" 
-    usecase u2 as "Definir les paramètres" 
-    usecase u3 as "Gérer les paris" 
-    usecase u4 as "Soumettre un ticket" 
-     usecase u5 as "Connexion" 
-  }
-
-  c  --  u1
-  c  --  u2
-  c  --  u3
-  a  --  u4
-  a  --  u5
-  c  --  u5
-
-
+ClassDiagram [frame=true framecolor=steelblue label="Class Diagram"] {
+ abstract class User {
+  private userId : string
+  private email : string
+  private loginStatus : Status
+  public login(email: string, password:string)
+ }
+ class Parieur {
+  private Name : string
+  public parier(somme: int, ...)
+ }
+ Parieur -g-> User
+  
+  class Bookmaker {
+  private bookmakerName : string
+ }
+ Bookmaker -g-> User
+  
+  class Pari {
+  private ID : int
+  private montant : int
+ }
+  
+  class Event {
+  private ID : int
+  private nom : string
+  private date : formatdate
+ }
+  
+  class Sport {
+  private ID : int
+  private nom : string
+  private règles : varchar
+ }
+  
+  class Option {
+  private libelle : string
+ }
+  
+  
+ class Type {
+  private nom : string
+ }
+  
+  Parieur "1" -- "0"Pari place 
+  
+  Pari "n" -- "1" Event concerne 
+  
+  Event "n" -- "1" Sport concerne 
+  
+  Option "1" -- "n" Pari possède 
+  
+  Option "n" -- "1" Type est
+  
+  Bookmaker "1" -- "n" Event gère
+  
+  Option "1" -- "n" Sport régit
+  
+  
 }
