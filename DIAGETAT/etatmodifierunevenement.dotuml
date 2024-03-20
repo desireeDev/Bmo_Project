@@ -1,0 +1,17 @@
+StateDiagram[frame=true framecolor=steelblue label="Diagramme d'État - Modification d'un Événement par le Bookmaker"] {
+  state "Événement Sélectionné" as ES
+  state "Saisie des Modifications" as SM
+  state "Validation des Modifications" as VM
+  state "Modifications Appliquées" as MA
+  state "Modification Refusée" as MR
+  
+  initialState -> ES "Bookmaker sélectionne l'événement"
+  ES -> SM "Initie la modification"
+  SM -> VM "Soumet les modifications"
+  
+  VM -> MA "Modifications validées"
+  VM -> MR "Modifications refusées / Invalides"
+  
+  MA -> finalState "Modification réussie"
+  MR -> finalState "Échec de la modification"
+}
