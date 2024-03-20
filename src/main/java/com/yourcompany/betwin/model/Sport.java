@@ -10,9 +10,9 @@ import lombok.*;
 public class Sport {
     @Id
     @Hidden
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length=32)
-    String oid;
+    private String code;
  
     @Column(length=50)
     String nom;
