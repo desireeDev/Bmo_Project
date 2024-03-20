@@ -4,14 +4,14 @@ SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Excepti
   lifeline "ParisEV5 : Pari" as validate
 
  
-  parieur --> web "modify(PariEV5, 50, option 12)"
+  parieur --> web "soumettre(EV5, 50, option 12)"
   activate web
 
 
-  web --> validate "modify(50, option12)"
+  web --> validate "soumettre(50, option12)"
   activate validate
-  web <-r- validate "impossible de modifier, evenement déjà commencé"
-  parieur <-r- web "évènement commencé"
+  web <-r- validate "impossible de soumettre, ticket déjà existant"
+  parieur <-r- web "déjà soumis"
   
 
 }
