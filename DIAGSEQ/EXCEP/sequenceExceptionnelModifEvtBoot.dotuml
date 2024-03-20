@@ -1,15 +1,15 @@
 SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Exceptionnel de Modification d'un Événement"] {
   actor Bookmaker
   participant "Système de Paris" as system
-  participant " Événement Sportif" as ev
+  participant " ev5 : event" as ev
   
-  Bookmaker --> system "demande de modification d'événement"
+  Bookmaker --> system "modify(ev5, date, equipe1, equipe2, misemax, gainmax)"
   activate system
-  system --> ev "rechercher événement à modifier"
+  system --> ev "modify(date,equipe1,equipe2,misemax,gainmax)"
   activate ev
-  ev --> system "événement non trouvé"
+  ev --> system "evenement terminé"
   deactivate ev
-  system --> Bookmaker "échec de la modification: événement non trouvé"
+  system --> Bookmaker "échec de la modification: événement terminé"
   deactivate system
   
  
