@@ -1,0 +1,3 @@
+Concernant les diagrammes exceptionnels, nous avons décidé de présenter une liste non exhaustive de cas où les choses pourraient mal se passer. Par exemple le cas où une personne déjà connectée chercherait à se connecter à nouveau. Le système renverrait donc une erreur.
+Dans notre modélisation, on ne permet pas un à un parieur d'accéder aux paramètres des évènements. De ce fait, nous n'avons pas trouvé pertinent d'intégrer des exceptions de parieur en rapport avec des actions de bookmaker 
+Raisons pour lesquelles la plupart de nos exceptions concernent les bookmakers et leurs actions.

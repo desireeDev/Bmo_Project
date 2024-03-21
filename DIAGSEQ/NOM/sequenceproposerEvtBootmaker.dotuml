@@ -3,7 +3,7 @@ SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Nominal
   participant "Système de Paris" as system
   participant "Ev5 : event" as ev
   
-  Bookmaker --> system "create(Ev5, foot, 05/03/25, misemax, gainmax"
+  Bookmaker --> system "create(Ev5, foot, 05/03/25, misemax, gainmax)"
   activate system
   system --> ev "make(foot, 05/03/25, misemax, gainmax)"
   activate ev

@@ -2,7 +2,7 @@ SequenceDiagram [frame=true framecolor=steelblue label="Cas Exceptionnel - Modif
   actor Parieur
   lifeline "Système de Paris" as sy
 
-  lifeline "Paris_Ev" as par
+  lifeline "PariEv5 : Pari" as par
 
   Parieur --> sy "modify(PariEV5, 50, option 12"
   activate sy

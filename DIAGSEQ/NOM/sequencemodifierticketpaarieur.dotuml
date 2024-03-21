@@ -1,30 +1,17 @@
 SequenceDiagram [frame=true framecolor=steelblue label="Diagramme de Séquence Nominal - Modification d'un Ticket par le Parieur"] {
   actor Parieur
-  lifeline "Systeme de Paris" as sy
-  lifeline "Paris_Ev" as ps
+  lifeline "Système de Paris" as sy
 
-  Parieur --> sy "Initie demande de modification"
+  lifeline "PariEv5 : Pari" as par
+
+  Parieur --> sy "modify(PariEV5, 50, option 12"
   activate sy
-
-
-
-  sy --> Parieur "Demande sélection du ticket"
-  Parieur --> sy "Sélectionne ticket à modifier"
   
-  sy --> Parieur "Demande modifications"
-  Parieur --> sy "Saisit modifications souhaitées"
-  
+  sy --> par "modify(50, option12)"
+  activate par
+  par --> sy "nouvelle mise enregistrée"
+  deactivate par
 
-
-
-  sy --> Parieur "Demande confirmation de modification"
-  Parieur --> sy "Confirme modifications"
-
-  sy --> ps "Applique les modifications"
-  activate ps
-  ps --> sy "Ticket modifié"
-  deactivate ps
-
-  sy --> Parieur "Notifie succès de la modification"
+  sy --> Parieur "confirmation de modification"
   deactivate sy
 }

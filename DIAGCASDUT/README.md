@@ -1,2 +1,2 @@
 Ici, nous traduisons en diagramme de cas notre compréhension du problème. Chaque acteur, deux dans notre cas, effectue des actions bien précises. Par exemple, un parieur peut uniquement se connecter, placer un pari ou le modifier. Nous avons décidé de ne pas lui permettre d'annuler ses paris pour limiter les abus ainsi que dissuader les événtuels accros aux jeux.
-Le bookmaker est ici aussi un utilisateur du système, avec plus de droits et d'accès qu'un parieur. A notre sens il va donc de soi que les deux ne visualisent pas les mêmes versions de l'interface
+Le bookmaker est ici aussi un utilisateur du système, avec plus de droits et d'accès qu'un parieur. A notre sens il va donc de soi que les deux ne visualisent pas les mêmes versions de l'interface.

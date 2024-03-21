@@ -1,15 +1,15 @@
 
 SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Exceptionnel"] {
-  actor parieur
+  actor Absa
   lifeline "Système de Paris" as web
   lifeline "Absa : parieur" as user
   
-  parieur --> web "demande de connexion"
+  Absa --> web "connexion(Absa, 3333)"
   activate web
 
   web --> user "connecte(3333)"
   activate user
   user --> web "deja connecté"
-  parieur <-r- web "échec de la connexion"
+  Absa <-r- web "échec de la connexion"
 
 }
