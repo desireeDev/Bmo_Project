@@ -1,0 +1,18 @@
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram "] {
+  actor Absa
+  lifeline "Système de Paris" as web
+  lifeline "Absa : parieur" as user
+  
+  Absa --> web "connexion(Absa, 3333)"
+  activate web
+
+  web --> user "connecte(3333)"
+  activate user
+  user --> web "ok"
+  Absa <-r- web "connecté"
+
+
+
+  
+
+}

@@ -1,0 +1,17 @@
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Exceptionnel"] {
+  actor parieur
+  lifeline "Système de Paris" as web
+  lifeline "ParisEV5 : Pari" as validate
+
+ 
+  parieur --> web "soumettre(EV5, 50, option 12)"
+  activate web
+
+
+  web --> validate "soumettre(50, option12)"
+  activate validate
+  web <-r- validate "impossible de soumettre, ticket déjà existant"
+  parieur <-r- web "déjà soumis"
+  
+
+}

@@ -1,0 +1,17 @@
+SequenceDiagram [frame=true framecolor=steelblue label="Diagramme de Séquence Nominal - Modification d'un Ticket par le Parieur"] {
+  actor Parieur
+  lifeline "Système de Paris" as sy
+
+  lifeline "Ev5 : Event" as par
+
+  Parieur --> sy "delete(EV5)"
+  activate sy
+  
+  sy --> par "delete()"
+  activate par
+  par --> sy "évènement supprimé"
+  deactivate par
+
+  sy --> Parieur "confirmation de suppression"
+  deactivate sy
+}

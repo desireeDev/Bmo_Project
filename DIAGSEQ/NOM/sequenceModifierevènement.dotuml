@@ -1,0 +1,16 @@
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Exceptionnel de Modification d'un Événement"] {
+  actor Bookmaker
+  participant "Système de Paris" as system
+  participant " ev5 : event" as ev
+  
+  Bookmaker --> system "(Ev5, foot, 05/03/25, misemax, gainmax)"
+  activate system
+  system --> ev "modify(Ev5, foot, 05/03/25, misemax, gainmax)"
+  activate ev
+  ev --> system "evenement date modifiée"
+  deactivate ev
+  system --> Bookmaker "confirmation de modification"
+  deactivate system
+  
+ 
+}
