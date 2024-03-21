@@ -1,0 +1,14 @@
+StateDiagram[frame=true framecolor=steelblue label="Diagramme d'État - Suppression d'un Événement par le Bookmaker"] {
+  state "Événement Sélectionné pour Suppression" as ESS
+  state "Demande de Confirmation de Suppression" as DCS
+  state "Suppression Validée" as SV
+  state "Suppression Refusée" as SR
+  
+  initialState -> ESS "Bookmaker sélectionne l'événement"
+  ESS -> DCS "Initie la demande de suppression"
+  DCS -> SV "Confirmation de suppression"
+  DCS -> SR "Annulation de la demande de suppression"
+  
+  SV -> finalState "Événement supprimé"
+  SR -> finalState "Suppression annulée"
+}
